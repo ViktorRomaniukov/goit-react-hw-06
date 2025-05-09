@@ -7,7 +7,7 @@ import { useDispatch } from 'react-redux';
 import { addContact } from '../../redux/contactsSlice';
 
 const ContactForm = () => {
-  const dispathc = useDispatch();
+  const dispatch = useDispatch();
 
   const handleSubmit = (values, options) => {
     const newContact = {
@@ -15,7 +15,7 @@ const ContactForm = () => {
       name: values.newName,
       number: values.newNumber,
     };
-    dispathc(addContact(newContact));
+    dispatch(addContact(newContact));
     options.resetForm();
   };
 
@@ -27,11 +27,11 @@ const ContactForm = () => {
   const contactsSchema = Yup.object().shape({
     newName: Yup.string()
       .min(2, 'Too Short!')
-      .max(20, 'Too Long!')
+      .max(30, 'Too Long!')
       .required('Required'),
     newNumber: Yup.string()
       .matches(
-        /^\+?[0-9]{1,4}?[0-9]{3,14}(?:x.+)?$/,
+        /^\+?[0-9\s\-()]{7,20}$/,
         'Phone number is not valid'
       )
       .required('Required'),
@@ -46,17 +46,17 @@ const ContactForm = () => {
       <Form>
         <label className={css.label}>
           <span className={css.span}>Name:</span>
-          <Field name="name" type="text" placeholder="Viktor Romaniukov" />
+          <Field name="newName" type="text" placeholder="Viktor Romaniukov" />
           <div style={{ color: 'red' }}>
-            <ErrorMessage name="name" />
+            <ErrorMessage name="newName" />
           </div>
         </label>
 
         <label className={css.label}>
           <span className={css.span}>Number:</span>
-          <Field name="number" type="tel" placeholder="000-00-00" />
+          <Field name="newNumber" type="tel" placeholder="000-00-00" />
           <div style={{ color: 'red' }}>
-            <ErrorMessage name="number" />
+            <ErrorMessage name="newNumber" />
           </div>
         </label>
 

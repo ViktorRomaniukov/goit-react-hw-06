@@ -6,23 +6,22 @@ import { useDispatch, useSelector } from 'react-redux';
 const SearchBox = () => {
 
   const dispatch = useDispatch();
-  const filter = useSelector(state => state.filters.name);
+  const filter = useSelector((state) => state.filters.name);
 
   const handleChange = (e) => {
     dispatch(changeFilter(e.target.value));
   }
 
   return (
-    <label htmlFor="searchInput" className={css.label}>
+    <div className={css.label}>
       <span>Find contacts by name</span>
       <input
         className={css.input}
-        id="searchInput"
         type="text"
         value={filter}
         onChange={handleChange}
       />
-    </label>
+    </div>
   );
 };
 
