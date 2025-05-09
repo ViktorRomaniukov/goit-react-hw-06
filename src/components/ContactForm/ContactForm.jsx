@@ -19,6 +19,11 @@ const ContactForm = () => {
     options.resetForm();
   };
 
+  const initialValues = {
+    newName: '',
+    newNumber: '',
+  };
+
   const contactsSchema = Yup.object().shape({
     newName: Yup.string()
       .min(2, 'Too Short!')

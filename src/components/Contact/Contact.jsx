@@ -12,7 +12,7 @@ const Contact = ({ id, name, number }) => {
   };
 
   return (
-    <li>
+    <>
       <div>
         <p>
           <TbUserFilled className="my-icon" size="24" /> {name}
@@ -24,7 +24,7 @@ const Contact = ({ id, name, number }) => {
       <button type="button" onClick={handleDelete}>
         Delete
       </button>
-    </li>
+    </>
   );
 };
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import './App.css';
 import ContactForm from './components/ContactForm/ContactForm';
 import SearchBox from './components/SearchBox/SearchBox';
@@ -10,7 +10,7 @@ import { setInitialContacts } from './redux/contactsSlice';
 
 
 function App() {
-  const contacts = useSelector(state => state.contacts.items);
+  const contacts = useSelector((state) => state.contacts.items);
   const dispatch = useDispatch();
 
   useEffect(() => {
