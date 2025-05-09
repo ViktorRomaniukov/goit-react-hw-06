@@ -1,15 +1,15 @@
 import React from 'react';
 import css from '../ContactForm/ContactForm.module.css';
-import {changeFilter} from '../../redux/filtersSlice';
+import { changeFilter } from '../../redux/filtersSlice';
+import { useDispatch, useSelector } from 'react-redux';
 
 const SearchBox = () => {
 
   const dispatch = useDispatch();
   const filter = useSelector(state => state.filters.name);
 
-  const handleChange = (event) => {
-    const { value } = event.target;
-    dispatch(changeFilter(value.target.value));
+  const handleChange = (e) => {
+    dispatch(changeFilter(e.target.value));
   }
 
   return (
