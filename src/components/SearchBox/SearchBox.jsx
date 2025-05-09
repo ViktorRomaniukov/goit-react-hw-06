@@ -1,6 +1,6 @@
 import React from 'react';
 import css from '../ContactForm/ContactForm.module.css';
-import {changeFilter} from '../../redux/contactsSlice';
+import {changeFilter} from '../../redux/filtersSlice';
 
 const SearchBox = () => {
 

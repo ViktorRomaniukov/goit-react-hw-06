@@ -1,7 +1,7 @@
 import React from 'react';
 import { TbUserFilled } from 'react-icons/tb';
 import { FaPhone } from 'react-icons/fa6';
-import { deleteContact } from '../../redux/contactsSlice';
+import { deleteContact } from "../../redux/contactsSlice";
 import { useDispatch } from "react-redux";
 
 const Contact = ({ id, name, number }) => {
